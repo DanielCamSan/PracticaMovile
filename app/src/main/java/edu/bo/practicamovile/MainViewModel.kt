@@ -2,10 +2,11 @@ package edu.bo.practicamovile
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import edu.bo.data.BooksRepository
+import edu.bo.domain.Book
 import kotlinx.coroutines.launch
 import java.sql.Date
-//import app.bo.com.ucb.domain.Book
-//import app.bo.com.ucb.usecases.GetPopularBook
+
 
 class MainViewModel(private val popularBooks: GetPopularBook) : ScopedViewModel() {
     init {
@@ -25,7 +26,7 @@ class MainViewModel(private val popularBooks: GetPopularBook) : ScopedViewModel(
         }
     }
 }
-class GetPopularBook(repository: MoviesRepository){
+class GetPopularBook(repository: BooksRepository){
     fun invoke() : List<Book>
     {
         var listPublications = arrayListOf<Book>()
@@ -33,28 +34,3 @@ class GetPopularBook(repository: MoviesRepository){
     }
 }
 
-data class Book(val id:Int, val title:String, val Description:String, val  authors:String, val createdDate: Date, val category:String)
-/*
-
-
-class MainViewModel(private val popularMovies: GetPopularMovie) : ScopedViewModel() {
-    init {
-        initScope()
-    }
-    private val _model = MutableLiveData<UiModel>()
-    val model: LiveData<UiModel>
-        get() = _model
-
-
-    sealed class UiModel() {
-        class Content(val movies: List<Movie>) : UiModel()
-    }
-    fun loadMovies() {
-        launch {
-            _model.value = UiModel.Content(popularMovies.invoke())
-        }
-    }
-}
-
-
- */
