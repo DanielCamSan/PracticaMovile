@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import edu.bo.data.BooksRepository
+import edu.bo.domain.Book
 import edu.bo.framework.BookDataSource
 import edu.bo.framework.RetrofitBuilder
 

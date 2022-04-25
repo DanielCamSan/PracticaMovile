@@ -3,7 +3,7 @@ package edu.bo.framework
 import com.google.gson.annotations.SerializedName
 import java.util.*
 
-data class Movie (
+data class Book (
     val id: Int,
     @SerializedName("title") val title: String,
     @SerializedName("description") val description: String,

@@ -1,5 +1,6 @@
 package edu.bo.framework
 
+import edu.bo.domain.Book
 import retrofit2.http.GET
 import retrofit2.http.Query
 
